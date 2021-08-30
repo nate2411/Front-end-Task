@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    background-size: 100% 140px;
+    background-position: 0 510px;
+    overflow: hidden;
+    background-color: white;
+    font-family: sans-serif;
+}
+
+header{
+    position: fixed;
+    top: 10px;
+    left: 0;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+header .logo{
+    display:flex ;
+    align-items: center;
+}
+
+header .logo img{
+    height: 50px;
+    margin: 0 10px;
+}
+ header .navbar{
+     transition: 3s linear;
+ }
+
+ header .navbar ul{
+     list-style-type: none;
+     display: flex;
+     align-items: center;
+     width: 600px;
+     justify-content: space-around;
+ }
+
+ header .navbar ul li{
+     font-size: 18px;
+     color:black;
+ }
+
+ header .navbar ul li:hover{
+     color: red ;
+     cursor: pointer;
+
+ }
