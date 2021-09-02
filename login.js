@@ -24,6 +24,7 @@ if (login_form != null) {
             if (data["access_token"]) {
                 console.log(data);
                 localStorage.setItem("jwt_token", data["access_token"]);
+                window.location.href="index.html"
               }
         });
     })
