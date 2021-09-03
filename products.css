@@ -263,8 +263,11 @@
     color: red;
     background-color: white;
   }
-  
-  /*Responsive styles*/
+  .icon{
+    font-size: 40px;
+    color: red;
+  }
+
   
   @media (max-width: 900px){
     .product .popup-card{

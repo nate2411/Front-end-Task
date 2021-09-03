@@ -10,6 +10,8 @@ if (login_form != null) {
             password: document.querySelector(".password").value
         }
 
+        console.log(user_details);   
+
         fetch("https://end-of-term.herokuapp.com/auth", {
             method: 'POST',
             headers: {
@@ -50,7 +52,7 @@ if (reg_form != null) {
         fetch("https://end-of-term.herokuapp.com/user-registration/", {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-type': 'application/json'
             },
             body: JSON.stringify(new_user)
         })
@@ -58,8 +60,9 @@ if (reg_form != null) {
         .then(data => { 
             console.log(data); 
             
-            let current_user = res.current_user;
+            let current_user = data.current_user;
             localStorage.setItem("current_user", JSON.stringify(current_user))
+            
         });
     })
 }
