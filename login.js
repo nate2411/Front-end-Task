@@ -10,7 +10,7 @@ if (login_form != null) {
             password: document.querySelector(".password").value
         }
 
-        console.log(user_details);   
+        console.log(user_details);
 
         fetch("https://end-of-term.herokuapp.com//user-login/", {
             method: 'POST',
@@ -25,7 +25,9 @@ if (login_form != null) {
             
             if (data["status_code"] == 201) {
                 console.log(data);
-                // localStorage.setItem("jwt_token", data["access_token"]);
+                getToken(user_details);
+                // console.log(localStorage.getItem("jwt_token", JSON.stringify(data.access_token)))   
+
                 window.location.href="index.html"
               }else{
                   alert("Login Unsuccessful, please try again")
@@ -68,4 +70,22 @@ if (reg_form != null) {
             
         });
     })
+}
+
+function getToken(user_details) {
+    fetch("https://end-of-term.herokuapp.com/auth", {
+        method: "POST",
+        body: JSON.stringify(user_details),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        }
+    })
+    .then((response) => response.json())
+    .then((data) => {
+        console.log(data)
+        if (data.access_token) {
+            localStorage.setItem("jwt_token", JSON.stringify(data.access_token))
+        }
+
+    });
 }

@@ -89,7 +89,7 @@ function createPopupView(card) {
       <h2>${card[1]}<br><span>${card[4]}</span></h2>
       <p>${card[5]}.</p>
       <span class="price">${card[4]}</span>
-      <a href="#" class="add-cart-btn">Add to Cart</a>
+      <a href="cart.html" class="add-cart-btn">Add to Cart</a>
     
     </div>
   </div>

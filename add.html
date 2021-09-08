@@ -10,15 +10,16 @@
 </head>
 <body>
   <div ><a href="products.html"><i class="fas fa-chevron-left icon"></i></a></div>
-  <div class="drag-area">
-    <div class="icon"><i class="far fa-plus-square"></i></div>
-    <header>Drag & Drop to Upload File</header>
-    <span>OR</span>
-    <button>Browse File</button>
-    <input type="file" hidden>
-    
-  </div>
-  <form class="add-product">
+  <form class="add-product" onsubmit="event.preventDefault(); addProduct()">
+    <label>Image_URL
+
+    </label>
+    <input
+      class="img_url"
+      type="text"
+      placeholder="Image_URL"
+      required
+    />
     <label>Name</label>
     <input
       class="name"
@@ -35,7 +36,7 @@
     />
     <label>Decription</label>
     <input
-      class="decription"
+      class="description"
       type="text"
       placeholder="Decription"
       required
@@ -45,6 +46,13 @@
       class="category"
       type="text"
       placeholder="Category"
+      required
+    />
+    <label>Review</label>
+    <input
+      class="review"
+      type="text"
+      placeholder="Review"
       required
     />
     <button class="add-btn">Add</button>
