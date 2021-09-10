@@ -21,9 +21,11 @@
     align-items: center;
     width: 100%;
     height: 100vh;
+    margin-top: 50px;
+
   }
   
-  /*Styles for product card*/
+  
   
   .product .product-card{
     z-index: 1;

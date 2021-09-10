@@ -31,6 +31,7 @@
     overflow: hidden;
     border: 1px solid red;
     margin-bottom: 20px;
+    margin-top: 80px;
   }
   
   .product img {
@@ -128,6 +129,7 @@
     align-items: center;
     position: fixed;
     top: 0;
+    z-index: 999;
   }
   
   .header .logo {

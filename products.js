@@ -43,7 +43,6 @@ function getProduct() {
 getProduct();
 
 function createCards(card) {
-  console.log(card);
   return`<div class="product">
   <div class="product-card">
     <h2 class="name">${card[1]}</h2>
@@ -89,10 +88,32 @@ function createPopupView(card) {
       <h2>${card[1]}<br><span>${card[4]}</span></h2>
       <p>${card[5]}.</p>
       <span class="price">${card[4]}</span>
-      <a href="cart.html" class="add-cart-btn">Add to Cart</a>
-    
+      <button onclick="addToCart(${card[0]})" class="add-cart-btn">Add to Cart</button>
     </div>
   </div>
 </div> 
   `
+}
+
+function addToCart(id) {
+  
+  fetch("https://end-of-term.herokuapp.com/show-products/")
+  .then((response) => response.json())
+  .then((data) => {
+      console.log(id);
+      console.log(data.data);
+     
+      let products = data.data;
+      let product = products.filter((product) => product[0] == id);
+      let cart_items = JSON.parse(localStorage.getItem(".product"));
+
+      console.log(product);
+
+      if (cart_items == null) {
+        cart_items = [];
+      }
+
+      cart_items.push(product);
+      localStorage.setItem(".product", JSON.stringify(cart_items));
+    });
 }
