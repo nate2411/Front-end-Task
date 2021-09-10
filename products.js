@@ -85,11 +85,12 @@ function createPopupView(card) {
     <a><i onclick="closeModal()" class="fas fa-times close-btn"></i></a>
     <div class="info">
     <img class="product-img" src="${card[2]}" alt="product-img">
+   
       <h2>${card[1]}<br><span>${card[4]}</span></h2>
       <p>${card[5]}.</p>
       <span class="price">${card[4]}</span>
       <button onclick="addToCart(${card[0]})" class="add-cart-btn">Add to Cart</button>
-    </div>
+      <button onclick="deleteProduct(${card[0]})"><i class="fas fa-trash-alt"></i></button>
   </div>
 </div> 
   `
@@ -116,4 +117,23 @@ function addToCart(id) {
       cart_items.push(product);
       localStorage.setItem(".product", JSON.stringify(cart_items));
     });
+}
+
+function deleteProduct(index) {
+  console.log(index);
+  let delConfirm = confirm("Are you sure you want to delete this product?");
+  if (delConfirm) {
+    let token = localStorage.getItem("jwt_token");
+
+    console.log(token);
+    fetch(`https://end-of-term.herokuapp.com/delete-product/${index}`, {
+      headers: {
+        Authorization: `jwt ${token}`,
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data));
+
+    getProduct();
+  }
 }

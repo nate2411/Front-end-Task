@@ -4,13 +4,6 @@
     box-sizing: border-box;
     font-family: sans-serif;
   }
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-   
-  }
   .input {
     border-radius: 73px;
     background: #f90000;
@@ -26,7 +19,7 @@
     border-radius: 50px;
     background: #f90000;
     /* box-shadow: 30px 30px 60px #660000, -30px -30px 60px #ff0000; */
-    padding: 5%;
+    padding: 20%;
     text-align: center;
   }
   
