@@ -67,7 +67,7 @@ if (reg_form != null) {
             let current_user = data.current_user;
             localStorage.setItem("current_user", JSON.stringify(current_user))
             window.location.href="login.html"
-            
+            alert("You are sucessfully registered")
         });
     })
 }

@@ -81,7 +81,11 @@ function addProduct() {
       console.log(res);
 
       if (res.status_code == 201) {
+        alert("Product sucessfully added ")
         window.location.reload();
+
+        // window.location.href="products.html"
+       
       }
     });
 }
