@@ -70,7 +70,8 @@
     font-weight: 900;
     font-size: 90px;
     line-height: 0.9em;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
+    margin-top: 154px;
   }
   
   .content-container p {
