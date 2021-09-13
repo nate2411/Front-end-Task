@@ -33,7 +33,7 @@
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 999;
@@ -83,4 +83,8 @@
       font-size: 20px;
       font-weight: bolder;
      
+  }
+
+  .signinbtn{
+    background-color: red;
   }

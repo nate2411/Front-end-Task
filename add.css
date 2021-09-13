@@ -5,10 +5,9 @@
     font-family: "Poppins", sans-serif;
   }
   body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
+    display: grid;
+    place-content: center;
+     min-height: 100vh;
    
   }
   .drag-area{
@@ -65,4 +64,14 @@
   }
   .fa-chevron-left{
     font-size: 50px;
+  }
+
+  .icon{
+    position: fixed;
+    top: 50px;
+    left: 50px;
+  }
+
+  .add-product{
+    background-color: red;
   }
